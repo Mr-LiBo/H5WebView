@@ -76,6 +76,16 @@ public class MainActivity extends AppCompatActivity {
         webView.setWebChromeClient(new WebChromeClient(){
             @Override
             public boolean onJsAlert(WebView view, String url, String message,final JsResult result) {
+
+
+
+
+
+
+
+
+
+
                 Log.e(TAG,"onJsAlert..."+message);
 //                final AlertDialog.Builder builder = new AlertDialog.Builder(view.getContext());
 //                builder.setTitle("对话框").setMessage(message).setPositiveButton("确定", new DialogInterface.OnClickListener()
