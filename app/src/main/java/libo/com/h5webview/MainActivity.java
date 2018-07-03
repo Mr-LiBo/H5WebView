@@ -57,6 +57,7 @@ public class MainActivity extends AppCompatActivity {
         if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP) {
             settings.setMixedContentMode(WebSettings.MIXED_CONTENT_ALWAYS_ALLOW);
         }
+
 //        settings.setBuiltInZoomControls(true);
 //        settings.setDisplayZoomControls(false);
 //        settings.setLoadWithOverviewMode(true);
@@ -292,6 +293,9 @@ public class MainActivity extends AppCompatActivity {
         });
 
         String url = "file:///android_asset/index.html";
+
+        url="http://192.168.200.88:8090/chinauip.cfc5/weixin/external/getVerificationToken.xhtml?idCard=44082419551119031X&token=0619499B3E4EB3342E5C4E531FE90959FEFCE1DC5085DF756E20CA23&code=JCXXCXYXG";
+
         webView.loadUrl(url);
     }
 
