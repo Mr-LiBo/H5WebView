@@ -10,18 +10,42 @@ android {
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
-    buildTypes {
+
+    signingConfigs {
         release {
-            minifyEnabled false
+            keyAlias 'alias'
+            keyPassword '12356789'
+            storeFile file('../app/lyyh.jks')
+            storePassword '12356789'
+        }
+
+        debug {
+            keyAlias 'alias'
+            keyPassword '12356789'
+            storeFile file('../app/lyyh.jks')
+            storePassword '12356789'
+        }
+
+    }
+
+
+    buildTypes {
+        debug {
+            //设置使用签名配置
+            signingConfig signingConfigs.debug
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        release {
+            //设置使用签名配置
+            signingConfig signingConfigs.release
+            //混淆
+            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-    sourceSets {
-        main {
-            java.srcDirs = ['src/main/java', 'src/main/assets', 'src/main/assets/images']
-            aidl.srcDirs = ['src/main/aidl', 'src/main/assetss/js']
-        }
-    }
+
+
 }
 
 dependencies {
